@@ -1,6 +1,6 @@
 @import "tailwindcss";
 
-:root {
+/* :root {
   --background: #ffffff;
   --foreground: #171717;
 }
@@ -23,4 +23,22 @@ body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+} */
+
+
+@font-face {
+  font-family: "inter-medium";
+  src: url("../assets/Fonts/Inter/Inter_18pt-Medium.ttf") format("truetype");
+}
+@font-face {
+  font-family: "inter-bold";
+  src: url("../assets/Fonts/Inter/Inter_18pt-Bold.ttf") format("truetype");
+}
+@font-face {
+  font-family: "inter-regular";
+  src: url("../assets/Fonts/Inter/Inter_18pt-Regular.ttf") format("truetype");
+}
+@font-face {
+  font-family: "jani-purva-regular";
+  src: url("../assets/Fonts/Jani_Purva/JainiPurva-Regular.ttf") format("truetype");
 }

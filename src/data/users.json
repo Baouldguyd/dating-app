@@ -1,0 +1,129 @@
+[
+    {
+      "name": "Davina",
+      "age": 23,
+      "location": "Abuja",
+      "match": "85%",
+      "verified": true,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Emily",
+      "age": 23,
+      "location": "Lagos",
+      "match": "80%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "John",
+      "age": 28,
+      "location": "Delta",
+      "match": "72%",
+      "verified": true,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Mads",
+      "age": 26,
+      "location": null,
+      "match": "77%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Love",
+      "age": 26,
+      "location": "Lagos",
+      "match": "80%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "View Info"
+    },
+    {
+      "name": "Karen",
+      "age": 23,
+      "location": "Abuja",
+      "match": "85%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "View Info"
+    },
+    {
+      "name": "Sharon",
+      "age": 24,
+      "location": "Lagos",
+      "match": "80%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Kevin",
+      "age": 30,
+      "location": "PH",
+      "match": "70%",
+      "verified": true,
+      "bio": "No bio available",
+      "button": "More Info"
+    },
+    {
+      "name": "Lily",
+      "age": 25,
+      "location": "Lagos",
+      "match": "89%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Davon",
+      "age": 34,
+      "location": "Lagos",
+      "match": "80%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Vivian",
+      "age": null,
+      "location": null,
+      "match": "71%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Davina",
+      "age": 21,
+      "location": "Ibadan",
+      "match": "80%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Jack",
+      "age": 30,
+      "location": "Lagos",
+      "match": "87%",
+      "verified": false,
+      "bio": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Pellentesque ornare eros mi, sed auctor libero finibus nec.",
+      "button": "More Info"
+    },
+    {
+      "name": "Dave",
+      "age": 26,
+      "location": "Lagos",
+      "match": "80%",
+      "verified": false,
+      "bio": "No bio available",
+      "button": "More Info"
+    }
+  ]
+  
