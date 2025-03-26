@@ -11,8 +11,13 @@ import ProfileIcon from "@/assets/Icons/ProfileIcon";
 import SettingsIcon from "@/assets/Icons/SettingsIcon";
 import userImage from "@/assets/Images/profileImageIcon.png";
 
-const Sidebar = () => {
+interface SidebarProps {
+  isExpanded: boolean;
+}
+
+const Sidebar = ({ isExpanded }: SidebarProps) => {
   const [currentPath, setCurrentPath] = useState("");
+
   useEffect(() => {
     if (typeof window !== "undefined") {
       setCurrentPath(window.location.pathname);
@@ -29,35 +34,48 @@ const Sidebar = () => {
     { name: "Settings", href: "/settings", icon: <SettingsIcon /> },
     { name: "Logout", href: "/logout", icon: <LogoutIcon /> },
   ];
-  return (
-    <div className="px-5 py-10 font-[inter-regular]">
-      {/* Profile Section */}
-      <div className="flex flex-col gap-4 items-center">
-        <Image
-          src={userImage}
-          alt="User Image"
-          className="h-15 w-15 rounded-full"
-        />
-        <p className="text-center font-bold">Temiloluwa</p>
-      </div>
 
-      {/* Navigation */}
-      <div className="mt-6 flex flex-col gap-2">
-        {navItems.map((item, index) => {
-          const isActive = currentPath === item.href;
-          return (
-            <a
-              key={index}
-              href={item.href}
-              className={`flex items-center gap-4 py-2 px-6 rounded-md transition ${
-                isActive ? "bg-red-500 text-white" : "hover:bg-gray-100"
-              }`}
-            >
-              {item.icon}
-              <span className="text-sm">{item.name}</span>
-            </a>
-          );
-        })}
+  return (
+    <div
+      className={`h-full bg-[#fff] rounded-l-md font-[inter-regular]  transition-all duration-300 ease-in-out ${
+        isExpanded ? "w-64  p-8" : "w-18"
+      }`}
+    >
+      {/* Profile Section */}
+      <div>
+        <div className="flex flex-col items-center py-6">
+          {isExpanded && (
+            <div className=" ">
+              <Image
+                src={userImage}
+                alt="User Image"
+                className="h-16 w-16 rounded-full mx-auto"
+              />
+              <p className="mt-2 font-bold text-center">Temiloluwa</p>
+            </div>
+          )}
+        </div>
+
+        {/* Navigation */}
+        {isExpanded && (
+          <nav className="mt-4">
+            {navItems.map((item, index) => {
+              const isActive = currentPath === item.href;
+              return (
+                <a
+                  key={index}
+                  href={item.href}
+                  className={`flex items-center gap-4 py-3 px-6 rounded-md transition-all duration-300 ${
+                    isActive ? "bg-red-500 text-white " : "hover:bg-gray-100"
+                  }`}
+                >
+                  {item.icon}
+                  {isExpanded && <span className="text-sm">{item.name}</span>}
+                </a>
+              );
+            })}
+          </nav>
+        )}
       </div>
     </div>
   );

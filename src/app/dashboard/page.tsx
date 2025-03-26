@@ -1,13 +1,15 @@
 "use client";
+import UserHeader from '@/components/Header/UserHeader';
 import Layout from '@/components/Layout';
+import UserCards from '@/components/UserCards/UserCards';
 import React from 'react'
 
 const Dashboard = () => {
   return (
     <Layout>
-      <div className="">
-        <h1 className="text-2xl font-semibold">Welcome to the Dashboard</h1>
-        <p className="mt-2">This is where you can manage your settings and content.</p>
+      <div className=" flex flex-col gap-4">
+        <UserHeader/>
+        <UserCards/>
       </div>
     </Layout>
   )
