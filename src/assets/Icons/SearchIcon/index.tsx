@@ -15,7 +15,7 @@ const SearchIcon = () => {
         width="15"
         height="15"
         fill="url(#pattern0_2197_103)"
-        fill-opacity="0.6"
+        fillOpacity="0.6"
       />
       <defs>
         <pattern

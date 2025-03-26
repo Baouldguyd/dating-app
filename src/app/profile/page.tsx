@@ -1,9 +1,12 @@
-import React from 'react'
+"use client";
+import Layout from "@/components/Layout";
 
 const Profile = () => {
   return (
-    <div>Profile</div>
-  )
-}
+    <Layout>
+      <div>Profile</div>
+    </Layout>
+  );
+};
 
-export default Profile
+export default Profile;

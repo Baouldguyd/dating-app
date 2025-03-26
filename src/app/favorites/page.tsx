@@ -1,8 +1,11 @@
+import Layout from '@/components/Layout'
 import React from 'react'
 
 const Favorites = () => {
   return (
-    <div>Favorites</div>
+    <Layout>
+      <div>Favorites</div>
+    </Layout>
   )
 }
 

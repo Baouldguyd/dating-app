@@ -1,12 +1,13 @@
 "use client";
+
 import Layout from "@/components/Layout";
 
-const Settings = () => {
+const Subscribed = () => {
   return (
     <Layout>
-      <div>Settings</div>
+        <div>Subscribed</div>
     </Layout>
-  );
-};
+  )
+}
 
-export default Settings;
+export default Subscribed
