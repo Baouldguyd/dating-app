@@ -1,30 +1,51 @@
+import AgeIcon from "@/assets/Icons/AboutMe/AgeIcon";
+import GenderIcon from "@/assets/Icons/AboutMe/GenderIcon";
+import HeightIcon from "@/assets/Icons/AboutMe/HeightIcon";
+import LocationIcon from "@/assets/Icons/AboutMe/LocationIcon";
+import Nationalityicon from "@/assets/Icons/AboutMe/Nationalityicon";
+import OccupationIcon from "@/assets/Icons/AboutMe/OccupationIcon";
+import RelationshipIcon from "@/assets/Icons/AboutMe/RelationshipIcon";
+import ReligionIcon from "@/assets/Icons/AboutMe/ReligionIcon";
+import WeightIcon from "@/assets/Icons/AboutMe/WeightIcon";
 import EditIcon from "@/assets/Icons/EditIcon";
+import BikingIcon from "@/assets/Icons/Hobbies/BikingIcon";
+import CookingIcon from "@/assets/Icons/Hobbies/CookingIcon";
+import DancingIcon from "@/assets/Icons/Hobbies/DancingIcon";
+import MuseumIcon from "@/assets/Icons/Hobbies/MuseumIcon";
+import UmbrellaIcon from "@/assets/Icons/Hobbies/UmbrellaIcon";
+import DrawingIcon from "@/assets/Icons/Interest/DrawingIcon";
+import HistoryIcon from "@/assets/Icons/Interest/HistoryIcon";
+import KnittingIcon from "@/assets/Icons/Interest/KnittingIcon";
+import PhotographyIcon from "@/assets/Icons/Interest/PhotographyIcon";
+import PoetryIcon from "@/assets/Icons/Interest/PoetryIcon";
+import TravelIcon from "@/assets/Icons/Interest/TravelIcon";
+import WoodworkingIcon from "@/assets/Icons/Interest/WoodworkingIcon";
 
 const ProfileGrid = () => {
   const hobbies = [
     {
       hobby: "Laying on the Beach",
-      icon: "",
+      icon: <UmbrellaIcon />,
       bg: "#FFFFFF",
     },
     {
       hobby: "Biking",
-      icon: "",
+      icon: <BikingIcon />,
       bg: "#BC1B1B",
     },
     {
       hobby: "Cooking",
-      icon: "",
+      icon: <CookingIcon />,
       bg: "#F6E123",
     },
     {
       hobby: "Dancing",
-      icon: "",
+      icon: <DancingIcon />,
       bg: "#9747FF",
     },
     {
       hobby: "Museums & Arts",
-      icon: "",
+      icon: <MuseumIcon />,
       bg: "#2DE9F5",
     },
   ];
@@ -32,51 +53,51 @@ const ProfileGrid = () => {
   const interests = [
     {
       hobby: "Travel",
-      icon: "",
+      icon: <TravelIcon />,
       bg: "#1B34BC",
     },
     {
       hobby: "Drawing",
-      icon: "",
+      icon: <DrawingIcon />,
       bg: "#F62FD6",
     },
     {
       hobby: "History",
-      icon: "",
+      icon: <HistoryIcon />,
       bg: "#EF2424",
     },
     {
       hobby: "Woodworking",
-      icon: "",
+      icon: <WoodworkingIcon />,
       bg: "#13E234",
     },
     {
       hobby: "Photography",
-      icon: "",
+      icon: <PhotographyIcon />,
       bg: "#F6E123",
     },
     {
       hobby: "Poetry",
-      icon: "",
+      icon: <PoetryIcon />,
       bg: "#0C827B",
     },
     {
       hobby: "Knitting",
-      icon: "",
+      icon: <KnittingIcon />,
       bg: "#2E275C",
     },
   ];
 
   const aboutMeData = [
-    { icon: "🔴", label: "Gender", value: "Male" },
-    { icon: "🔵", label: "Age", value: "27" },
-    { icon: "🟡", label: "Occupation", value: "Engineer" },
-    { icon: "🟢", label: "Relationship", value: "Single" },
-    { icon: "🟣", label: "Location", value: "Lagos" },
-    { icon: "🟢", label: "Height range", value: "5’5 - 6’0" },
-    { icon: "🔴", label: "Weight range", value: "60 - 70kg" },
-    { icon: "🔵", label: "Religion", value: "Christianity" },
-    { icon: "🟡", label: "Nationality", value: "Nigerian" },
+    { icon: <GenderIcon />, label: "Gender", value: "Male", bg: "#EF2424" },
+    { icon: <AgeIcon/>, label: "Age", value: "27", bg: "#3E7BEA" },
+    { icon: <OccupationIcon/>, label: "Occupation", value: "Engineer", bg: "#F6E123" },
+    { icon: <RelationshipIcon/>, label: "Relationship", value: "Single", bg: "#00A389" },
+    { icon: <LocationIcon/>, label: "Location", value: "Lagos", bg: "#9747FF" },
+    { icon: <HeightIcon/>, label: "Height range", value: "5’5 - 6’0", bg: "#0B6A59" },
+    { icon: <WeightIcon/>, label: "Weight range", value: "60 - 70kg", bg: "#D40C0C" },
+    { icon: <ReligionIcon/>, label: "Religion", value: "Christianity", bg: "#16166C" },
+    { icon: <Nationalityicon/>, label: "Nationality", value: "Nigerian", bg: "#CEBB0F" },
   ];
 
   return (
@@ -93,9 +114,11 @@ const ProfileGrid = () => {
             <div className=" w-20 bg-[#fff] ">
               <div
                 key={index}
-                className={`flex items-center justify-center w-18 h-18 rounded-full m-auto  text-white`}
+                className={`flex items-center justify-center w-14 h-14 rounded-full m-auto  text-white`}
                 style={{ backgroundColor: hobby.bg }}
-              ></div>
+              >
+                {hobby.icon}
+              </div>
               <p className=" text-center text-[15px]">{hobby.hobby}</p>
             </div>
           ))}
@@ -114,9 +137,11 @@ const ProfileGrid = () => {
             <div className=" w-20 bg-[#fff] ">
               <div
                 key={index}
-                className={`flex items-center justify-center w-18 h-18 rounded-full m-auto  text-white`}
+                className={`flex items-center justify-center w-14 h-14 rounded-full m-auto  text-white`}
                 style={{ backgroundColor: hobby.bg }}
-              ></div>
+              >
+                {hobby.icon}
+              </div>
               <p className=" text-center text-[15px]">{hobby.hobby}</p>
             </div>
           ))}
@@ -128,7 +153,9 @@ const ProfileGrid = () => {
         <div className="flex flex-col gap-3">
           {aboutMeData.map((item, index) => (
             <div key={index} className="flex items-start gap-2">
-              <span className="text-lg">{item.icon}</span>
+              <span className=" w-8 h-8 rounded-full flex items-center justify-center" style={{
+                backgroundColor: item.bg
+              }}>{item.icon}</span>
               <p className="text-[#000000] text-sm w-full">
                 <span className="flex gap-2 items-baseline">
                   <span className="font-medium min-w-[100px]">
