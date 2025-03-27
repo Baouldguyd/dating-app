@@ -9,24 +9,28 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
 
   return (
     <div className="flex flex-col h-screen">
-      <Header />
-      <div className="bg-[#F6F6F6] gap-6 h-screen flex md:px-6 md:py-8">
-        <div className="relative flex">
-          <button
-            className="cursor-pointer absolute md:top-4 md:left-4 top-2 left-2 z-[2000] md:p-2 "
-            onClick={() => setIsExpanded(!isExpanded)}
-          >
-            <HamburgerIcon />
-          </button>
-          <div >
-            <Sidebar isExpanded={isExpanded} />
-          </div>
-        </div>
-        <div className="flex  h-full w-full rounded-r-md overflow-auto">
-          <main className="w-full md:p-4">{children}</main>
-        </div>
+    <Header />
+    <div className="bg-[#F6F6F6] gap-6 flex-1 flex md:px-6 md:py-8 overflow-hidden">
+      {/* Sidebar + Hamburger */}
+      <div className="relative flex-shrink-0">
+        <button
+          className="cursor-pointer absolute md:top-4 md:left-4 top-2 left-2 z-[2000] md:p-2"
+          onClick={() => setIsExpanded(!isExpanded)}
+        >
+          <HamburgerIcon />
+        </button>
+        <Sidebar isExpanded={isExpanded} />
+      </div>
+  
+      {/* Scrollable MAIN */}
+      <div className="flex flex-col h-full w-full rounded-r-md overflow-hidden">
+        <main className="flex-1 overflow-auto p-4 md:p-6">
+          {children}
+        </main>
       </div>
     </div>
+  </div>
+  
   );
 };
 

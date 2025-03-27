@@ -101,10 +101,10 @@ const ProfileGrid = () => {
   ];
 
   return (
-    <div className="flex bg-[#fff] flex-col md:flex-row font-[inter-regular] gap-4 md:gap-6 w-full flex-wrap md:flex-nowrap h-full">
+    <div className="flex  flex-col md:flex-row font-[inter-regular] gap-4 md:gap-6 w-full flex-wrap md:flex-nowrap h-full">
 
   {/* Hobbies */}
-  <div className="flex-1 h-full flex-col gap-2 p-2 md:p-3 border rounded-md border-[#D9D9D9] ">
+  <div className="flex-1 bg-[#fff] h-full flex-col gap-2 p-2 md:p-3 border rounded-md border-[#D9D9D9] ">
     <div className="flex justify-between items-center">
       <p className="font-bold text-base md:text-lg">My Hobbies</p>
       <button className="cursor-pointer">
@@ -113,7 +113,7 @@ const ProfileGrid = () => {
     </div>
     <div className="flex flex-wrap gap-4 md:gap-8">
       {hobbies.map((hobby, index) => (
-        <div key={index} className="w-16 md:w-20 bg-[#fff] ">
+        <div key={index} className="w-16 md:w-20 ">
           <div
             className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full m-auto text-white"
             style={{ backgroundColor: hobby.bg }}
@@ -127,7 +127,7 @@ const ProfileGrid = () => {
   </div>
 
   {/* Interests */}
-  <div className="flex-1 flex-col gap-2 flex h-full p-2 md:p-3 border rounded-md border-[#D9D9D9] ">
+  <div className="flex-1 flex-col gap-2 bg-[#fff] flex h-full p-2 md:p-3 border rounded-md border-[#D9D9D9] ">
     <div className="flex justify-between items-center">
       <p className="font-bold text-base md:text-lg">My Interests</p>
       <button className="cursor-pointer">
@@ -150,7 +150,7 @@ const ProfileGrid = () => {
   </div>
 
   {/* About Me */}
-  <div className="flex-1 h-full border border-[#D9D9D9] p-2 md:p-3 rounded-md hidden md:block">
+  <div className="flex-1 h-full border bg-[#fff] border-[#D9D9D9] p-2 md:p-3 rounded-md">
     <h2 className="text-base md:text-lg font-semibold mb-2">About Me</h2>
     <div className="flex flex-col gap-3">
       {aboutMeData.map((item, index) => (

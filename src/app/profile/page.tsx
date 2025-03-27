@@ -14,9 +14,9 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   return (
     <Layout>
-      <div className="grid h-full font-[inter-regular] grid-rows-[30%_25%_1fr] gap-4">
+      <div className=" h-full font-[inter-regular]  flex flex-col min-h-[100svh] gap-4">
         {/* Cover Section */}
-        <div className="relative grid grid-rows-[70%_1fr]">
+        <div className="relative min-h-[30%] grid grid-rows-[70%_1fr]">
           {/* Cover Image */}
           <div className="relative">
             {/* Back and Update Cover buttons */}
@@ -31,7 +31,7 @@ const Profile = () => {
             <Image
               src={userCoverImage}
               alt="Cover Image"
-              className="w-full h-full object-cover"
+              className="w-full h-full rounded-t-md object-cover"
             />
           </div>
 
@@ -43,16 +43,16 @@ const Profile = () => {
                 alt="Profile Image"
                 className="rounded-md w-40 h-40 md:w-full md:h-full"
               />
-              <button className="absolute -right-4 -bottom-2 md:right-[-16] md:bottom-[-15]">
+              <button className="absolute -right-4 -bottom-12 md:right-[-16] md:bottom-[-15]">
                 <UpdateProfileIcon />
               </button>
             </div>
-            <div className="pt-2 md:pt-6 flex flex-col md:gap-2">
+            <div className="pt-2 md:pt-6 flex flex-col md:gap-2 md:ml-4 relative">
               <p className="font-bold text-sm md:text-lg">Temiloluwa, 27</p>
-              <p className="text-[#00000099] text-[10px] md:text-[12px] font-bold">
+              <p className="text-[#00000099] text-[10px]  font-bold md:text-[0.9rem]">
                 Lagos
               </p>
-              <button className="cursor-pointer md:hidden mt-1">
+              <button className="cursor-pointer mt-1 absolute top-1 md:top-6 -right-10 md:-right-10">
                 <EditIcon />
               </button>
             </div>
@@ -60,7 +60,7 @@ const Profile = () => {
 
           {/* Edit Buttons */}
           <div className="flex md:justify-end ">
-            <div className="flex  md:gap-2 justify-between   gap-1 p-5 w-full md:w-auto">
+            <div className="flex mt-4 md:mt-0  md:gap-2 justify-between   gap-1 p-5 w-full md:w-auto">
               <button className="bg-[#EF2424] cursor-pointer rounded-full text-[#fff] w-auto text-[10px] px-2 md:px-4 py-1">
                 Edit Profile
               </button>
@@ -72,10 +72,10 @@ const Profile = () => {
         </div>
 
         {/* About & Photos Section */}
-        <div className="bg-[#fff]">
+        <div className=" h-auto">
           <div className="md:w-[50%] w-full h-full flex flex-col gap-4">
             {/* About me */}
-            <div className="w-full h-20 relative  pl-4 pt-4 rounded-md border border-[#D9D9D9] flex">
+            <div className="w-full h-20 relative  pl-4 pt-4 rounded-md border bg-[#fff] border-[#D9D9D9] flex">
               {isEditing ? (
                 <input
                   type="text"
@@ -96,7 +96,7 @@ const Profile = () => {
             </div>
 
             {/* Photo Upload Grid */}
-            <div className="w-full rounded-md border border-[#D9D9D9] flex p-3 justify-around flex-wrap md:flex-nowrap gap-2">
+            <div className="w-full rounded-md border bg-[#fff] border-[#D9D9D9] flex p-3 justify-around flex-wrap md:flex-nowrap gap-2">
               <div className="h-20 w-20 rounded-md flex gap-2">
                 <Image
                   src={profileImage}
