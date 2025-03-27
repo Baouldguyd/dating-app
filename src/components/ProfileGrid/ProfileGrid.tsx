@@ -101,76 +101,80 @@ const ProfileGrid = () => {
   ];
 
   return (
-    <div className="flex flex-col md:flex-row font-[inter-regular] gap-6 w-full flex-wrap md:flex-nowrap h-full">
-      <div className="flex-1   h-full flex-col gap-2 p-3 border rounded-md border-[#D9D9D9] ">
-        <div className=" flex  justify-between">
-          <p className=" font-bold text-lg">My Hobbies</p>
-          <button className=" cursor-pointer">
-            <EditIcon />
-          </button>
-        </div>
-        <div className="flex flex-wrap gap-8">
-          {hobbies.map((hobby, index) => (
-            <div className=" w-20 bg-[#fff] ">
-              <div
-                key={index}
-                className={`flex items-center justify-center w-14 h-14 rounded-full m-auto  text-white`}
-                style={{ backgroundColor: hobby.bg }}
-              >
-                {hobby.icon}
-              </div>
-              <p className=" text-center text-[15px]">{hobby.hobby}</p>
-            </div>
-          ))}
-        </div>
-      </div>
+    <div className="flex bg-[#fff] flex-col md:flex-row font-[inter-regular] gap-4 md:gap-6 w-full flex-wrap md:flex-nowrap h-full">
 
-      <div className="flex-1 flex-col gap-2 flex h-full p-3 border rounded-md border-[#D9D9D9] ">
-        <div className=" flex  justify-between">
-          <p className=" font-bold text-lg">My Interests</p>
-          <button className=" cursor-pointer">
-            <EditIcon />
-          </button>
-        </div>
-        <div className="flex flex-wrap gap-6 rounded-md">
-          {interests.map((hobby, index) => (
-            <div className=" w-20 bg-[#fff] ">
-              <div
-                key={index}
-                className={`flex items-center justify-center w-14 h-14 rounded-full m-auto  text-white`}
-                style={{ backgroundColor: hobby.bg }}
-              >
-                {hobby.icon}
-              </div>
-              <p className=" text-center text-[15px]">{hobby.hobby}</p>
-            </div>
-          ))}
-        </div>
-      </div>
-
-      <div className="flex-1 h-full border border-[#D9D9D9] p-3 rounded-md">
-        <h2 className="text-lg font-semibold mb-2">About Me</h2>
-        <div className="flex flex-col gap-3">
-          {aboutMeData.map((item, index) => (
-            <div key={index} className="flex items-start gap-2">
-              <span className=" w-8 h-8 rounded-full flex items-center justify-center" style={{
-                backgroundColor: item.bg
-              }}>{item.icon}</span>
-              <p className="text-[#000000] text-sm w-full">
-                <span className="flex gap-2 items-baseline">
-                  <span className="font-medium min-w-[100px]">
-                    {item.label}:
-                  </span>
-                  <span className="font-bold text-[15px] text-[#000000]">
-                    {item.value}
-                  </span>
-                </span>
-              </p>
-            </div>
-          ))}
-        </div>
-      </div>
+  {/* Hobbies */}
+  <div className="flex-1 h-full flex-col gap-2 p-2 md:p-3 border rounded-md border-[#D9D9D9] ">
+    <div className="flex justify-between items-center">
+      <p className="font-bold text-base md:text-lg">My Hobbies</p>
+      <button className="cursor-pointer">
+        <EditIcon />
+      </button>
     </div>
+    <div className="flex flex-wrap gap-4 md:gap-8">
+      {hobbies.map((hobby, index) => (
+        <div key={index} className="w-16 md:w-20 bg-[#fff] ">
+          <div
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full m-auto text-white"
+            style={{ backgroundColor: hobby.bg }}
+          >
+            {hobby.icon}
+          </div>
+          <p className="text-center text-[13px] md:text-[15px]">{hobby.hobby}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* Interests */}
+  <div className="flex-1 flex-col gap-2 flex h-full p-2 md:p-3 border rounded-md border-[#D9D9D9] ">
+    <div className="flex justify-between items-center">
+      <p className="font-bold text-base md:text-lg">My Interests</p>
+      <button className="cursor-pointer">
+        <EditIcon />
+      </button>
+    </div>
+    <div className="flex flex-wrap gap-4 md:gap-6 rounded-md">
+      {interests.map((hobby, index) => (
+        <div key={index} className="w-16 md:w-20 bg-[#fff] ">
+          <div
+            className="flex items-center justify-center w-12 h-12 md:w-14 md:h-14 rounded-full m-auto text-white"
+            style={{ backgroundColor: hobby.bg }}
+          >
+            {hobby.icon}
+          </div>
+          <p className="text-center text-[13px] md:text-[15px]">{hobby.hobby}</p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+  {/* About Me */}
+  <div className="flex-1 h-full border border-[#D9D9D9] p-2 md:p-3 rounded-md hidden md:block">
+    <h2 className="text-base md:text-lg font-semibold mb-2">About Me</h2>
+    <div className="flex flex-col gap-3">
+      {aboutMeData.map((item, index) => (
+        <div key={index} className="flex items-start gap-2">
+          <span className="w-7 h-7 md:w-8 md:h-8 rounded-full flex items-center justify-center" style={{ backgroundColor: item.bg }}>
+            {item.icon}
+          </span>
+          <p className="text-[#000000] text-sm w-full">
+            <span className="flex gap-2 items-baseline">
+              <span className="font-medium min-w-[80px] md:min-w-[100px]">
+                {item.label}:
+              </span>
+              <span className="font-bold text-[13px] md:text-[15px] text-[#000000]">
+                {item.value}
+              </span>
+            </span>
+          </p>
+        </div>
+      ))}
+    </div>
+  </div>
+
+</div>
+
   );
 };
 

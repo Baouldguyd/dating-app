@@ -37,9 +37,13 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
 
   return (
     <div
-      className={`h-full  rounded-l-md font-[inter-regular]  transition-all duration-300 ease-in-out ${
-        isExpanded ? "w-64 bg-[#fff] p-8" : "md:w-18 w-8"
-      }`}
+      className={`${isExpanded ? "md:w-64 bg-[#fff] p-2 md:p-8  " : "md:w-18 w-8"} 
+    h-full rounded-l-md font-[inter-regular] transition-all duration-300 ease-in-out
+    z-[1000]
+    md:relative md:static
+    fixed top-0 left-0
+    ${isExpanded ? "shadow-xl" : ""}
+    `}
     >
       {/* Profile Section */}
       <div>
@@ -76,7 +80,7 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
             })}
           </nav>
         )}
-        {
+        {/* {
           !isExpanded &&(
             <nav className="mt-4 md:hidden flex flex-col gap-6">
             {navItems.map((item, index) => {
@@ -95,7 +99,7 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
             })}
           </nav>
           )
-        }
+        } */}
       </div>
     </div>
   );

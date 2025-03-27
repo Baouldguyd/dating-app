@@ -8,9 +8,9 @@ const Header = () => {
   return (
     <div className=" font-[inter-regular] ">
       {/* Navbar */}
-      <header className="w-full md:px-6 md:shadow-lg border-b-2 border-[#ffffff85] flex justify-between md:grid md:grid-cols-[12rem_1fr_10rem]">
+      <header className="w-full md:px-6 md:shadow-lg border border-[#D9D9D9] flex justify-between md:grid md:grid-cols-[12rem_1fr_10rem]">
         {/* Logo */}
-        <div className="md:py-4 md:px-8 px-2 flex  items-center justify-around gap-8 shadow-lg  ">
+        <div className="md:py-4 md:px-8 px-2 flex  border border-l-0 border-[#D9D9D9] items-center justify-around gap-8   ">
           <Image src={Logo} alt={"Logo"} className="h-full w-15" />
           <div>
             <p className=" font-[jani-purva-regular] text-lg md:text-2xl">

@@ -13,12 +13,12 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
       <div className="bg-[#F6F6F6] gap-6 h-screen flex md:px-6 md:py-8">
         <div className="relative flex">
           <button
-            className="cursor-pointer absolute md:top-4 md:left-4 top-2 left-2 z-200 md:p-2 "
+            className="cursor-pointer absolute md:top-4 md:left-4 top-2 left-2 z-[2000] md:p-2 "
             onClick={() => setIsExpanded(!isExpanded)}
           >
             <HamburgerIcon />
           </button>
-          <div className="z-100">
+          <div >
             <Sidebar isExpanded={isExpanded} />
           </div>
         </div>

@@ -1,15 +1,24 @@
 "use client";
 import Image from "next/image";
-import davinaProfileImage from "@/assets/Images/Users/Davina/davinaProfileImage.png";
+import davinaProfileImage from "@/data/UserImages/Davina/davinaProfileImage.png";
 import HeartIcon from "@/assets/Icons/HeartIcon";
 import VerifiedIcon from "@/assets/Icons/VerifiedIcon";
-import davinaCoverImage from "@/assets/Images/Users/Davina/davinaCoverImage.png";
+import davinaCoverImage from "@/data/UserImages/Davina/davinaCoverImage.png";
 import { useEffect, useState } from "react";
 import "@/components/Loader/Loader.css";
 import users from "@/data/users.json";
+import HeartActiveIcon from "@/assets/Icons/HeartActiveIcon";
 
 const UserCards = () => {
   const [isLoading, setIsLoading] = useState(true);
+  const [likedUsers, setLikedUsers] = useState<Record<number, boolean>>({}); // holds liked status by index or id
+
+  const toggleLike = (index: number) => {
+    setLikedUsers((prev) => ({
+      ...prev,
+      [index]: !prev[index],
+    }));
+  };
 
   useEffect(() => {
     setTimeout(async () => {
@@ -29,7 +38,7 @@ const UserCards = () => {
           {users.map((user, index) => (
             <div
               key={index}
-              className="w-[212px] h-[211px] border border-[#D9D9D9] md:h-[18rem] md:w-[19rem]  relative grid grid-rows-[40%_1fr] bg-white rounded-md shadow-lg"
+              className="w-[212px] h-[211px] mb-4 border border-[#D9D9D9] md:h-[18rem] md:w-[19rem]  relative grid grid-rows-[40%_1fr] bg-white rounded-md shadow-lg"
             >
               {/* Cover Image */}
               <div className="rounded-t-md">
@@ -66,13 +75,16 @@ const UserCards = () => {
                   <button className="cursor-pointer p-2 text-white text-[8px] bg-[#EF2424] rounded-full md:text-[0.6rem]">
                     More Info
                   </button>
-                  <button className="cursor-pointer">
-                    <HeartIcon />
+                  <button
+                    onClick={() => toggleLike(index)}
+                    className="cursor-pointer"
+                  >
+                    {likedUsers[index] ? <HeartActiveIcon /> : <HeartIcon />}
                   </button>
                 </div>
               </div>
               {/* Profile Image */}
-              <div className="absolute top-13 left-18 md:top-20 md:left-28 rounded-full h-[4rem] w-[4rem] md:h-[5rem] md:w-[5rem] md:bg-red-500">
+              <div className="absolute top-13 left-18 md:top-20 md:left-28 rounded-full h-[4rem] w-[4rem] md:h-[5rem] md:w-[5rem]">
                 <Image
                   src={davinaProfileImage}
                   alt="davinaProfileImage"
