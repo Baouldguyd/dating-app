@@ -14,68 +14,73 @@ const Profile = () => {
   const [isEditing, setIsEditing] = useState(false);
   return (
     <Layout>
-      <div className=" grid h-full font-[inter-regular] grid-rows-[30%_25%_1fr] gap-4">
-        <div className=" relative grid grid-rows-[70%_1fr]">
+      <div className=" h-full font-[inter-regular]  flex flex-col min-h-[100svh] gap-4">
+        {/* Cover Section */}
+        <div className="relative min-h-[30%] grid grid-rows-[70%_1fr]">
           {/* Cover Image */}
-          <div className="relative ">
-            <div className="absolute flex justify-between pt-4  w-full">
-              <button className="px-4 py-2 absolute cursor-pointer left-10 rounded-md  bg-[#00000099] text-[#fff] text-[12px]">
+          <div className="relative">
+            {/* Back and Update Cover buttons */}
+            <div className="absolute flex justify-between pt-4 w-full px-4">
+              <button className="px-2 py-1 md:px-4 md:py-2 rounded-md bg-[#00000099] text-[#fff] text-[10px] md:text-[12px]">
                 Back
               </button>
-              <button className="px-4 py-2 bg-[#00000099] cursor-pointer rounded-md absolute right-10 text-[#fff] text-[12px]">
+              <button className="px-2 py-1 md:px-4 md:py-2 bg-[#00000099] rounded-md text-[#fff] text-[10px] md:text-[12px] hidden md:block">
                 Update Cover
               </button>
             </div>
             <Image
               src={userCoverImage}
               alt="Cover Image"
-              className="w-full h-full"
+              className="w-full h-full rounded-t-md object-cover"
             />
           </div>
-          <div className=" absolute top-15 left-13 w-[40%] h-[65%] flex px-4 gap-2">
+
+          {/* Profile Info */}
+          <div className="absolute md:top-15 md:left-13 left-2 top-2 w-[90%] md:w-[40%] h-[65%] flex gap-2">
             <div className="h-full relative">
               <Image
                 src={profileImage}
                 alt="Profile Image"
-                className=" w-full h-full"
+                className="rounded-md w-40 h-40 md:w-full md:h-full"
               />
-              <button className=" absolute right-[-16] bottom-[-15]">
+              <button className="absolute -right-4 -bottom-12 md:right-[-16] md:bottom-[-15]">
                 <UpdateProfileIcon />
               </button>
             </div>
-            <div className="pt-6 flex gap-2 items-start">
-              <span className="">
-                <p className="font-bold text-lg">Temiloluwa, 27</p>
-                <p className="text-[#00000099] text-[12px] font-bold">Lagos</p>
-              </span>
-              <button className=" cursor-pointer">
+            <div className="pt-2 md:pt-6 flex flex-col md:gap-2 md:ml-4 relative">
+              <p className="font-bold text-sm md:text-lg">Temiloluwa, 27</p>
+              <p className="text-[#00000099] text-[10px]  font-bold md:text-[0.9rem]">
+                Lagos
+              </p>
+              <button className="cursor-pointer mt-1 absolute top-1 md:top-6 -right-10 md:-right-10">
                 <EditIcon />
               </button>
             </div>
           </div>
 
-          <div className="bg-[#fff] flex justify-end ">
-            <div className=" flex gap-2 p-4 ">
-              <button className="bg-[#EF2424] cursor-pointer rounded-full text-[#fff] px-4 text-[10px] ">
+          {/* Edit Buttons */}
+          <div className="flex md:justify-end ">
+            <div className="flex mt-4 md:mt-0  md:gap-2 justify-between   gap-1 p-5 w-full md:w-auto">
+              <button className="bg-[#EF2424] cursor-pointer rounded-full text-[#fff] w-auto text-[10px] px-2 md:px-4 py-1">
                 Edit Profile
               </button>
-              <button className=" bg-[#EF2424] cursor-pointer rounded-full text-[#fff] px-4 text-[10px]">
+              <button className="bg-[#EF2424] cursor-pointer rounded-full text-[#fff] w-auto text-[10px] px-2 md:px-4 py-1">
                 Edit Match Setup
               </button>
             </div>
           </div>
         </div>
 
-        <div className="bg-[#fff]">
-          <div className="w-[50%] h-full flex flex-col gap-4">
-            <div className="w-full relative flex-1 pl-4 pt-4 rounded-md items-start border border-[#D9D9D9] flex ">
+        {/* About & Photos Section */}
+        <div className=" h-auto">
+          <div className="md:w-[50%] w-full h-full flex flex-col gap-4">
+            {/* About me */}
+            <div className="w-full h-20 relative  pl-4 pt-4 rounded-md border bg-[#fff] border-[#D9D9D9] flex">
               {isEditing ? (
                 <input
                   type="text"
-                  name=""
-                  id=""
                   placeholder="A few words about myself"
-                  className="border-none pl-4 text-[#000000f6] text-sm"
+                  className="border-none pl-4 text-[#000000f6] text-sm bg-transparent w-full"
                 />
               ) : (
                 <p className="border-none pl-4 text-[#00000059] text-sm">
@@ -84,37 +89,39 @@ const Profile = () => {
               )}
               <button
                 onClick={() => setIsEditing(!isEditing)}
-                className=" absolute left-51 cursor-pointer"
+                className="absolute right-4 top-2 cursor-pointer"
               >
                 <PenIcon />
               </button>
             </div>
-            <div className="w-full flex-1 rounded-md border border-[#D9D9D9]  flex p-3 justify-around">
-              <div className=" h-20 w-20 rounded-md flex gap-2">
+
+            {/* Photo Upload Grid */}
+            <div className="w-full rounded-md border bg-[#fff] border-[#D9D9D9] flex p-3 justify-around flex-wrap md:flex-nowrap gap-2">
+              <div className="h-20 w-20 rounded-md flex gap-2">
                 <Image
                   src={profileImage}
                   alt="Profile Image"
-                  className=" w-full h-full"
+                  className="w-full h-full"
                 />
               </div>
               {[...Array(4)].map((_, index) => (
                 <div
                   key={index}
-                  className="h-20 w-20 p-2 cursor-pointer rounded-md flex gap-2 border border-[#D9D9D9] flex-col"
+                  className="h-20 w-20 p-2 cursor-pointer rounded-md border border-[#D9D9D9] flex flex-col justify-center items-center"
                 >
                   <p className="text-[10px] text-center text-[#00000099]">
                     Add Photo
                   </p>
-                  <span className="mx-auto">
-                    <AddPhototIcon />
-                  </span>
+                  <AddPhototIcon />
                 </div>
               ))}
             </div>
           </div>
         </div>
-        <div className="">
-          <ProfileGrid/>
+
+        {/* Profile Grid */}
+        <div>
+          <ProfileGrid />
         </div>
       </div>
     </Layout>
