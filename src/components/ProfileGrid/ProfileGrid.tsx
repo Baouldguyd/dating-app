@@ -101,7 +101,7 @@ const ProfileGrid = () => {
   ];
 
   return (
-    <div className="flex font-[inter-regular] gap-6 w-full flex-wrap md:flex-nowrap h-full">
+    <div className="flex flex-col md:flex-row font-[inter-regular] gap-6 w-full flex-wrap md:flex-nowrap h-full">
       <div className="flex-1   h-full flex-col gap-2 p-3 border rounded-md border-[#D9D9D9] ">
         <div className=" flex  justify-between">
           <p className=" font-bold text-lg">My Hobbies</p>

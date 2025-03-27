@@ -37,8 +37,8 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
 
   return (
     <div
-      className={`h-full bg-[#fff] rounded-l-md font-[inter-regular]  transition-all duration-300 ease-in-out ${
-        isExpanded ? "w-64  p-8" : "w-18"
+      className={`h-full  rounded-l-md font-[inter-regular]  transition-all duration-300 ease-in-out ${
+        isExpanded ? "w-64 bg-[#fff] p-8" : "md:w-18 w-8"
       }`}
     >
       {/* Profile Section */}
@@ -58,7 +58,7 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
 
         {/* Navigation */}
         {isExpanded && (
-          <nav className="mt-4">
+          <nav className="mt-4  ">
             {navItems.map((item, index) => {
               const isActive = currentPath === item.href;
               return (
@@ -66,7 +66,7 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
                   key={index}
                   href={item.href}
                   className={`flex items-center gap-4 py-3 px-6 rounded-md transition-all duration-300 ${
-                    isActive ? "bg-red-500 text-white " : "hover:bg-gray-100"
+                    isActive ? "bg-[#EF2424] text-white " : "hover:bg-gray-100"
                   }`}
                 >
                   {item.icon}
@@ -76,6 +76,26 @@ const Sidebar = ({ isExpanded }: SidebarProps) => {
             })}
           </nav>
         )}
+        {
+          !isExpanded &&(
+            <nav className="mt-4 md:hidden flex flex-col gap-6">
+            {navItems.map((item, index) => {
+              const isActive = currentPath === item.href;
+              return (
+                <a
+                  key={index}
+                  href={item.href}
+                  className={`flex m-auto  rounded-sm transition-all duration-300 ${
+                    isActive ? "bg-[#EF2424] text-white " : "hover:bg-gray-100"
+                  }`}
+                >
+                  {item.icon}
+                </a>
+              );
+            })}
+          </nav>
+          )
+        }
       </div>
     </div>
   );

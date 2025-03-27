@@ -10,20 +10,20 @@ const Layout = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="flex flex-col h-screen">
       <Header />
-      <div className="bg-[#fff] gap-6 h-screen flex px-6 py-8">
+      <div className="bg-[#F6F6F6] gap-6 h-screen flex md:px-6 md:py-8">
         <div className="relative flex">
           <button
-            className="cursor-pointer absolute top-4 left-4 z-50 p-2 "
+            className="cursor-pointer absolute md:top-4 md:left-4 top-2 left-2 z-200 md:p-2 "
             onClick={() => setIsExpanded(!isExpanded)}
           >
             <HamburgerIcon />
           </button>
-          <div className="z-20">
+          <div className="z-100">
             <Sidebar isExpanded={isExpanded} />
           </div>
         </div>
         <div className="flex  h-full w-full rounded-r-md overflow-auto">
-          <main className="w-full p-4">{children}</main>
+          <main className="w-full md:p-4">{children}</main>
         </div>
       </div>
     </div>

@@ -3,7 +3,7 @@ const ProgressBar = ({ progress }: { progress: number }) => {
   return (
     <div className="flex items-center gap-2 font-[inter-regular]">
       {/* Progress Bar Container */}
-      <div className="relative w-60 h-2 bg-gray-300 rounded-full overflow-hidden">
+      <div className="relative md:w-60 w-20 h-2 bg-gray-300 rounded-full overflow-hidden">
         {/* Progress Fill */}
         <div
           className="h-full bg-[#EF2424] rounded-full transition-all duration-300"
@@ -12,7 +12,7 @@ const ProgressBar = ({ progress }: { progress: number }) => {
       </div>
 
       {/* Percentage Label */}
-      <span className="text-black  text-sm font-medium">{progress}%</span>
+      <span className="text-black  md:text-sm font-medium text-[10px]">{progress}%</span>
     </div>
   );
 };

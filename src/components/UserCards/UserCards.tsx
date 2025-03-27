@@ -21,7 +21,7 @@ const UserCards = () => {
     <div className=" font-[inter-regular] h-full  scrollbar-thin scrollbar-thumb-gray-400 scrollbar-track-gray-200 overflow-y-auto">
       {/* User Card */}
       {isLoading ? (
-        <div className="h-full flex items-center justify-start">
+        <div className="h-[20rem] flex items-center justify-center">
           <div className="loader"></div>
         </div>
       ) : (
@@ -29,7 +29,7 @@ const UserCards = () => {
           {users.map((user, index) => (
             <div
               key={index}
-              className="w-[212px] h-[211px] md:h-[18rem] md:w-[19rem]  relative grid grid-rows-[40%_1fr] bg-white rounded-md shadow-lg"
+              className="w-[212px] h-[211px] border border-[#D9D9D9] md:h-[18rem] md:w-[19rem]  relative grid grid-rows-[40%_1fr] bg-white rounded-md shadow-lg"
             >
               {/* Cover Image */}
               <div className="rounded-t-md">
@@ -58,12 +58,12 @@ const UserCards = () => {
                   </span>
                 </div>
                 <div>
-                  <p className="text-[#00000099] w-[90%] text-[8px] md:text-[0.6rem]">
+                  <p className="text-[#00000099] w-[90%] text-[8px] md:text-[0.8rem] ">
                     {user.bio}
                   </p>
                 </div>
                 <div className="flex justify-between">
-                  <button className="cursor-pointer p-2 text-white text-[8px] bg-[#EF2424] rounded-full">
+                  <button className="cursor-pointer p-2 text-white text-[8px] bg-[#EF2424] rounded-full md:text-[0.6rem]">
                     More Info
                   </button>
                   <button className="cursor-pointer">
@@ -72,11 +72,11 @@ const UserCards = () => {
                 </div>
               </div>
               {/* Profile Image */}
-              <div className="absolute top-13 left-18 md:top-22 md:left-30 rounded-full h-[4rem] w-[4rem]">
+              <div className="absolute top-13 left-18 md:top-20 md:left-28 rounded-full h-[4rem] w-[4rem] md:h-[5rem] md:w-[5rem] md:bg-red-500">
                 <Image
                   src={davinaProfileImage}
                   alt="davinaProfileImage"
-                  className="rounded-full"
+                  className="rounded- h-full w-full"
                 />
               </div>
             </div>

@@ -67,8 +67,8 @@ const Profile = () => {
         </div>
 
         <div className="bg-[#fff]">
-          <div className="w-[50%] h-full flex flex-col gap-4">
-            <div className="w-full relative flex-1 pl-4 pt-4 rounded-md items-start border border-[#D9D9D9] flex ">
+          <div className="md:w-[50%] w-full h-full flex flex-col gap-4">
+            <div className="w-full  h-20 relative bg-green-200  pl-4 pt-4 rounded-md items-start border border-[#D9D9D9] flex ">
               {isEditing ? (
                 <input
                   type="text"
@@ -89,7 +89,7 @@ const Profile = () => {
                 <PenIcon />
               </button>
             </div>
-            <div className="w-full flex-1 rounded-md border border-[#D9D9D9]  flex p-3 justify-around">
+            <div className="w-full  rounded-md border border-[#D9D9D9]  flex p-3 justify-around">
               <div className=" h-20 w-20 rounded-md flex gap-2">
                 <Image
                   src={profileImage}
